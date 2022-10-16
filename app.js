@@ -12,10 +12,18 @@ app.options("*", cors());
 app.use(express.json());
 app.use(morgan("tiny"));
 
-
+Routes
+const busRoutes = require("./routes/bus");
+const rikshaRoutes = require("./routes/riksha");
+const travellersRoutes = require("./routes/travellers");
+const shopsRoutes = require("./routes/travellers");
 
 const api = process.env.API_URL;
 
+app.use(`${api}/bus`, busRoutes);
+app.use(`${api}/riksha`, rikshaRoutes);
+app.use(`${api}/travellers`, travellersRoutes);
+app.use(`${api}/shops`, shopsRoutes);
 
 //Database
 mongoose
