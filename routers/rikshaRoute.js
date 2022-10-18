@@ -1,4 +1,4 @@
-const {riksha} = require('../models/product');
+const {riksha} = require('../models/riksha');
 const express = require('express');
 const router = express.Router();
 

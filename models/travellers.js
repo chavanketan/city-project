@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const travellersSchema = mongoose.Schema({
     travellers_name: String,
-    root: String,
+    contact: Number,
     
 })
 

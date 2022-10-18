@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const busSchema = mongoose.Schema({
-    bus_name: String,
-    root: String,
+    riksha_owner_name: String,
+    contact: Number,
     
 })
 
-exports.bus = mongoose.model('Riksha', busSchema);
+exports.riksha = mongoose.model('Riksha', busSchema);

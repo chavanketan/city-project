@@ -12,11 +12,11 @@ app.options("*", cors());
 app.use(express.json());
 app.use(morgan("tiny"));
 
-Routes
-const busRoutes = require("./routes/bus");
-const rikshaRoutes = require("./routes/riksha");
-const travellersRoutes = require("./routes/travellers");
-const shopsRoutes = require("./routes/travellers");
+//Routes
+const busRoutes = require("./routers/busRoute");
+const rikshaRoutes = require("./routers/rikshaRoute");
+const travellersRoutes = require("./routers/travellersRoute");
+const shopsRoutes = require("./routers/travellersRoute");
 
 const api = process.env.API_URL;
 
