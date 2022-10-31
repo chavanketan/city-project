@@ -11,8 +11,8 @@ router.get(`/`, async (req, res) =>{
     res.send(busList);
 })
 
-router.post(`/`, (req, res) =>{
-    const buses = new bus({
+router.post(`/`, async (req, res) =>{
+    const buses = await new bus({
         bus_name: req.body.bus_name,
         bus_root: req.body.bus_root,
     })
@@ -26,15 +26,16 @@ router.post(`/`, (req, res) =>{
         })
     })
 })
-router.delete('/:id',(req,res)=>{
-    const busremove=bus.findIdAndRemove(req.params.id).then(buss=>{
-        if(buss){
-            return res.status(200).json({success: true,message:"bus removed from database "+buss})
+router.delete('/:id',async (req,res)=>{
+    console.log("inside delete bus",req.params.id)
+    const busremove=await bus.findById(req.params.id)
+    console.log("removed bus",busremove)
+        if(busremove){
+            return res.status(200).json({success: true,message:"bus removed from database "+busremove})
         }
         else{
-            return res.status(2404).json({success: false,message:"no bus data found "+buss})
+            return res.status(404).json({success: false,message:"no bus data found "+busremove})
         }
     })
-})
 
 module.exports =router;
