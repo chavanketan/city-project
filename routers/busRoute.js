@@ -28,7 +28,7 @@ router.post(`/`, async (req, res) =>{
 })
 router.delete('/:id',async (req,res)=>{
     console.log("inside delete bus",req.params.id)
-    const busremove=await bus.findById(req.params.id)
+    const busremove=await bus.deleteOne({bus_name:req.params.id})
     console.log("removed bus",busremove)
         if(busremove){
             return res.status(200).json({success: true,message:"bus removed from database "+busremove})
