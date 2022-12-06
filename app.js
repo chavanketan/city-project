@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv/config");
-const hostname=https://city-api.onrender.com/
+const hostname= "https://city-api.onrender.com/"
 app.use(cors());
 app.options("*", cors());
 
