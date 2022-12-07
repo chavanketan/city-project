@@ -4,7 +4,6 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv/config");
-const hostname= "https://city-api.onrender.com/"
 app.use(cors());
 app.options("*", cors());
 
@@ -45,6 +44,6 @@ mongoose
   });
 
 //Server
-app.listen(27017,hostname, () => {
+app.listen(3000, () => {
   console.log("server is running http://localhost:3000");
 });
