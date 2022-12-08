@@ -30,7 +30,7 @@ router.post(`/`, async (req, res) =>{
         longitude:req.body.longitude,
         latitude:req.body.latitude,
         IsActive:req.body.isActive,
-        business:req.body.business
+        business:req.body.business,
         mobile_number:req.body.mobile_number,
         gender:req.body.gender,
         created_date:req.body.created_date,
