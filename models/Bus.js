@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const busSchema = mongoose.Schema({
     bus_name: String,
-    bus_root: String,
+    bus_time: String
     
 })
 
