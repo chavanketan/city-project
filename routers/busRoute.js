@@ -6,7 +6,7 @@ const router = express.Router();
 router.get(`/`, async (req, res) =>{
     const busList = await bus.find();
     const { page = 1, limit = 10 } = req.query;
-  
+    console.log('in get bus',busList)
     try {
       // execute query with page and limit values
       const posts = await bus.find()
@@ -16,7 +16,7 @@ router.get(`/`, async (req, res) =>{
   
       // get total documents in the Posts collection 
       const count = await bus.countDocuments();
-       // console.log("in bus data",posts,count,limit,page)
+       console.log("in bus data",posts,count,limit,page)
       // return response with posts, total pages, and current page
       res.json({
         posts,
